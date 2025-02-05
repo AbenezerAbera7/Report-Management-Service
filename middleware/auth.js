@@ -17,7 +17,7 @@ const verifyToken = (req, res, next) => {
         const decoded = jwt.verify(tokenParts[1], JWT_SECRET);
         req.user = decoded.id;
         req.tenant = decoded.tenant_id;
-        req.isadmin = decoded.isadmin
+        req.isadmin = decoded.isadmin;
         next();
     } catch (err) {
         // Handle specific JWT errors
